@@ -1,5 +1,5 @@
 {
-  "name": "@cycle/rx-hot-adapter",
+  "name": "rx-hot-adapter",
   "version": "3.0.0",
   "description": "Cycle.js RxJS 4 Hot Stream Adapter",
   "main": "lib/index.js",
@@ -62,8 +62,8 @@
     "prelib": "rm -rf lib/ && mkdirp lib/ && typings install",
     "lib": "tsc",
     "predist": "rm -rf dist/ && mkdirp dist/ && npm run lib",
-    "dist": "browserify -t browserify-shim -t babelify --exclude rx lib/index.js -o dist/cycle-rx-adapter.js",
-    "postdist": "uglifyjs dist/cycle-rx-adapter.js -o dist/cycle-rx-adapter.min.js",
+    "dist": "browserify -t browserify-shim -t babelify --exclude rx lib/index.js -o dist/cycle-rx-hot-adapter.js",
+    "postdist": "uglifyjs dist/cycle-rx-hot-adapter.js -o dist/cycle-rx-hot-adapter.min.js",
     "start": "npm install && npm prune",
     "prepublish": "npm run lib",
     "preversion": "npm run dist"
