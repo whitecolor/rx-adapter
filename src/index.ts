@@ -6,13 +6,14 @@ import {
   Subject,
 } from '@cycle/base';
 const Rx = require('rx');
+const Hot = require('rx-hot');
 
-const RxJSAdapter: StreamAdapter = {
+const RxJSHotAdapter: StreamAdapter = {
   adapt<T>(originStream: any, originStreamSubscribe: StreamSubscribe): Rx.Observable<T> {
     if (this.isValidStream(originStream)) {
       return originStream;
     }
-    return <Rx.Observable<T>> Rx.Observable.create((destinationObserver: any) => {
+    return <Rx.Observable<T>> Hot.create((destinationObserver: any) => {
       const originObserver: Observer<T> = {
         next: (x: T) => destinationObserver.onNext(x),
         error: (e: any) => destinationObserver.onError(e),
@@ -59,4 +60,4 @@ const RxJSAdapter: StreamAdapter = {
   }
 };
 
-export default RxJSAdapter;
+export default RxJSHotAdapter;

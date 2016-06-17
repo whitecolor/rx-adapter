@@ -1,12 +1,12 @@
 {
-  "name": "@cycle/rx-adapter",
+  "name": "@cycle/rx-hot-adapter",
   "version": "3.0.0",
-  "description": "Cycle.js RxJS 4 Stream Adapter",
+  "description": "Cycle.js RxJS 4 Hot Stream Adapter",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cyclejs/rx-adapter.git"
+    "url": "git+https://github.com/whitecolor/rx-hot-adapter.git"
   },
   "contributors": [
     {
@@ -27,14 +27,15 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cyclejs/rx-adapter/issues"
+    "url": "https://github.com/cyclejs/rx-hot-adapter/issues"
   },
-  "homepage": "https://github.com/cyclejs/rx-adapter",
+  "homepage": "https://github.com/cyclejs/rx-hot-adapter",
   "browserify-shim": {
     "rx": "global:Rx"
   },
   "peerDependencies": {
-    "rx": "*"
+    "rx": "*",
+    "rx-hot": "*"
   },
   "devDependencies": {
     "@cycle/base": "^4.0.0",
@@ -47,6 +48,7 @@
     "mkdirp": "^0.5.1",
     "mocha": "^2.3.4",
     "rx": "^4.0.7",
+    "rx-hot": "^1.0.4",
     "tslint": "3.6.0",
     "typescript": "^1.8.7",
     "typings": "^1.0.4",
